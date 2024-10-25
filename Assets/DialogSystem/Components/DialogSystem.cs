@@ -17,8 +17,9 @@ public class DialogProperties
     public Color NameColor = Color.white;
     public bool FreezeMovement = false;
     public int FontSize = 36;
+    public AudioClip voiceClip;
 
-    public DialogProperties(string text, string name, Color nameColor, int fontSize = 36, bool freezeMovement = false)
+    public DialogProperties(string text, string name, Color nameColor, int fontSize = 36, bool freezeMovement = false, AudioClip voiceClip = null)
     {
         if (nameColor == null) nameColor = Color.white;
         NameColor = nameColor;
@@ -26,6 +27,7 @@ public class DialogProperties
         Name = name;
         FontSize = fontSize;
         FreezeMovement = freezeMovement;
+        this.voiceClip = voiceClip;
     }
 }
 
@@ -33,6 +35,7 @@ public class DialogProperties
 public class DialogSystem : MonoBehaviour
 {
     [Header("Dialog Settings")]
+    [SerializeField] AudioSource audioSource;
     [SerializeField] TMP_Text dialogName;
     [SerializeField] TMP_Text dialogText;
     [SerializeField] TMP_Text popup;
@@ -72,6 +75,8 @@ public class DialogSystem : MonoBehaviour
         StopCoroutine(DialogTextLerp(""));
         TextShake.Shake(false, "", -1);
 
+        if (audioSource.isPlaying) audioSource.Stop();
+
         DialogProperties currentDialog;
 
         if (DialogQueue.Count == 0)
@@ -88,6 +93,12 @@ public class DialogSystem : MonoBehaviour
         dialogName.text = currentDialog.Name;
         dialogName.color = (Color)currentDialog.NameColor;
         dialogText.text = currentDialog.Text;
+
+        if (currentDialog.voiceClip)
+        {
+            audioSource.clip = currentDialog.voiceClip;
+            audioSource.Play();
+        }
 
         if (dialogText.text.Contains("<shake>".ToLower().Trim()))
         {
