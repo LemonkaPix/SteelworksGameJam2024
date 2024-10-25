@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16dffa6d65b01543ba4b957d442efa9, type: 3}
   m_Name: Casette
   m_EditorClassIdentifier: 
-  ItemType: 0
+  ItemType: 1
   Name: 
   Description: 
   Tooltip: 
