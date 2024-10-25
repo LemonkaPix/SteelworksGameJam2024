@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Soda
   m_EditorClassIdentifier: 
   ItemType: 1
-  Name: 
-  Description: 
+  Name: Soda
+  Description: Why does it have such a weird name??
   Tooltip: 
-  DefaultSprite: {fileID: 0}
+  DefaultSprite: {fileID: 21300000, guid: 9d91deea0ef2f0a4c9253f349b13ace0, type: 3}
   CanStack: 0
   MaxStack: 0

@@ -11,9 +11,9 @@ public class TooltipTrigger : MonoBehaviour
     [SerializeField] Material outlineMat;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Player")) return;
+        if (other.gameObject.layer != 7) return;
         MeshRenderer meshRenderer = transform.parent.GetComponent<MeshRenderer>();
-        interactTooltip.SetActive(true);
+        interactTooltip.GetComponent<CanvasGroup>().alpha = 1;
         List<Material> mats = meshRenderer.materials.ToList();
         mats.Add(outlineMat);
         meshRenderer.SetMaterials(mats);
@@ -23,7 +23,7 @@ public class TooltipTrigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Player")) return;
-        interactTooltip.SetActive(false);
+        interactTooltip.GetComponent<CanvasGroup>().alpha = 0;
 
 
         MeshRenderer meshRenderer = transform.parent.GetComponent<MeshRenderer>();
