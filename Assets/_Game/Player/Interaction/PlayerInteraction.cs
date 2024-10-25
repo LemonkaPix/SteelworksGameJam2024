@@ -11,6 +11,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] bool drawGizmo;
     private void Update()
     {
+
         if(Input.GetKeyDown(interactionButton)) 
         {
             if(closestObject)
@@ -20,12 +21,12 @@ public class PlayerInteraction : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, radius, interactionLayer);
+        Collider[] nearbyObjects = Physics.OverlapSphere(transform.position, radius, interactionLayer);
 
         float closestDistance = Mathf.Infinity;
         closestObject = null;
 
-        foreach(Collider2D obj in nearbyObjects)
+        foreach(Collider obj in nearbyObjects)
         {
             if (!obj.GetComponent<Interactable>()) return;
 
