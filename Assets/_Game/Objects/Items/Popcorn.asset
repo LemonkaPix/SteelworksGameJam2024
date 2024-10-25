@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16dffa6d65b01543ba4b957d442efa9, type: 3}
   m_Name: Popcorn
   m_EditorClassIdentifier: 
-  ItemType: 0
+  ItemType: 1
   Name: 
   Description: 
   Tooltip: 
-  DefaultSprite: {fileID: 0}
+  DefaultSprite: {fileID: 21300000, guid: 5ad9a84f892a9344eaf88b109634b3d2, type: 3}
   CanStack: 0
   MaxStack: 0

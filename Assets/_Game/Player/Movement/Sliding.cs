@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class Sliding : MonoBehaviour
 {
-    [Header("References")]
-    public Transform orientation;
+    [Header("References")] public Transform orientation;
     public Transform playerObj;
     private Rigidbody rb;
     private PlayerMovementAdvanced pm;
 
-    [Header("Sliding")]
-    public float maxSlideTime;
+    [Header("Sliding")] public float maxSlideTime;
     public float slideForce;
     private float slideTimer;
 
     public float slideYScale;
     private float startYScale;
 
-    [Header("Input")]
-    public KeyCode slideKey = KeyCode.LeftControl;
+    [Header("Input")] public KeyCode slideKey = KeyCode.LeftControl;
     private float horizontalInput;
     private float verticalInput;
 
@@ -52,12 +49,15 @@ public class Sliding : MonoBehaviour
 
     private void StartSlide()
     {
-        pm.sliding = true;
+        if (pm.state != PlayerMovementAdvanced.MovementState.air)
+        {
+            pm.sliding = true;
 
-        playerObj.localScale = new Vector3(playerObj.localScale.x, slideYScale, playerObj.localScale.z);
-        rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+            playerObj.localScale = new Vector3(playerObj.localScale.x, slideYScale, playerObj.localScale.z);
+            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
-        slideTimer = maxSlideTime;
+            slideTimer = maxSlideTime;
+        }
     }
 
     private void SlidingMovement()
@@ -65,7 +65,7 @@ public class Sliding : MonoBehaviour
         Vector3 inputDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         // sliding normal
-        if(!pm.OnSlope() || rb.velocity.y > -0.1f)
+        if (!pm.OnSlope() || rb.velocity.y > -0.1f)
         {
             rb.AddForce(inputDirection.normalized * slideForce, ForceMode.Force);
 
