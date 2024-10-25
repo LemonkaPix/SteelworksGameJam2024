@@ -94,7 +94,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if(PlayerManager.CanMove)
+            MovePlayer();
     }
 
     private void MyInput()

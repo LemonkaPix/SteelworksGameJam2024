@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
+    // public static bool locked = false;
     public Transform cameraPosition;
 
     private void Update()
     {
-        transform.position = cameraPosition.position;
+        // if(!PlayerManager.CameraLocked)
+            transform.position = cameraPosition.position;
     }
 }

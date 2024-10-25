@@ -7,10 +7,12 @@ public class PlayerManager : MonoBehaviour
 {
 
     public static PlayerManager instance;
+    public static bool CanMove = true;
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
     }
 
 }

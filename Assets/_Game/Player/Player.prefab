@@ -266,6 +266,8 @@ GameObject:
   - component: {fileID: 7864422477013210322}
   - component: {fileID: 7107116408699441670}
   - component: {fileID: 4061313085175575462}
+  - component: {fileID: 7096409918884886788}
+  - component: {fileID: 6535359670067042969}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -369,3 +371,33 @@ MonoBehaviour:
   slideForce: 200
   slideYScale: 0.5
   slideKey: 306
+--- !u!114 &7096409918884886788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8871031197428796382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca14ce9b4d94fbf45b70e9caad8b84ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3.5
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  interactionButton: 101
+  drawGizmo: 1
+--- !u!114 &6535359670067042969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8871031197428796382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c2b17e2d9003f4f8ff2b67f09c27b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
