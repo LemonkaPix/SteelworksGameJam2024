@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Casette
   m_EditorClassIdentifier: 
   ItemType: 1
-  Name: 
-  Description: 
+  Name: Casette
+  Description: Perfect for today's movie night.
   Tooltip: 
-  DefaultSprite: {fileID: 0}
+  DefaultSprite: {fileID: 21300000, guid: 5e5d342c07c694d4b94de7c562ce84ae, type: 3}
   CanStack: 0
   MaxStack: 0

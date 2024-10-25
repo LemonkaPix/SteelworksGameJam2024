@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Popcorn
   m_EditorClassIdentifier: 
   ItemType: 1
-  Name: 
-  Description: 
+  Name: Popcorn
+  Description: Yum!
   Tooltip: 
   DefaultSprite: {fileID: 21300000, guid: 5ad9a84f892a9344eaf88b109634b3d2, type: 3}
   CanStack: 0

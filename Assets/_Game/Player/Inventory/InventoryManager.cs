@@ -6,46 +6,18 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
 
-    [Expandable] [SerializeField] InventoryObject inventoryData;
+    public List<ItemObject> items;
 
     public int inventorySize;
+   
 
-    // Start is called before the first frame update
-    void Start()
+    public void AddItem(ItemObject item)
     {
-        inventoryData.Initialize();
+        items.Add(item);
     }
 
-    public InventoryObject GetInventory()
+    public void RemoveItem(ItemObject item)
     {
-        return inventoryData;
-    }
-
-    public InventoryItem GetItem(int itemIndex)
-    {
-        return inventoryData.GetItem(itemIndex);
-    }
-
-    public bool AddItem(ItemObject item, int amount = 1)
-    {
-        bool result = inventoryData.AddItem(item, amount);
-
-        if(result == false)
-        {
-            Debug.Log("Inv full");
-        }
-
-        return result;
-    }
-
-
-    public void RemoveItem(int itemIndex)
-    {
-        inventoryData.RemoveItem(itemIndex);
-    }
-
-    public void RemoveItem(InventoryItem item)
-    {
-        inventoryData.RemoveItem(item);
+        items.Remove(item);
     }
 }
