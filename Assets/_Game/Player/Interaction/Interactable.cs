@@ -13,8 +13,9 @@ public enum InteractionType
 
 public class Interactable : MonoBehaviour
 {
+
+    public bool canBeHighlighted = true;
     [SerializeField] InteractionType interactionType;
-    [SerializeField] [TextArea(2, 5)] string customTooltip;
 
     [ShowIf("interactionType", InteractionType.Pickup)]
     [SerializeField] ItemObject itemToGive;
@@ -31,6 +32,8 @@ public class Interactable : MonoBehaviour
             InventoryManager inventoryManager = PlayerManager.instance.GetComponent<InventoryManager>();
 
             inventoryManager.items.Add(itemToGive);
+            TooltipTrigger trigger = GetComponentInChildren<TooltipTrigger>();
+            trigger.HideTooltip();
             Destroy(gameObject);
         }
     }
