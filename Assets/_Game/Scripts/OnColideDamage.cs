@@ -35,22 +35,11 @@ public class OnColideDamage : MonoBehaviour
         PlayerManager.instance.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; // Replace with original speed if needed
         PlayerManager.instance.gameObject.GetComponent<Rigidbody>().MoveRotation(Quaternion.identity); // or use the stored original rotation
 
-        
-        
-        ResetAdditionalScene();
-        
-        
+
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
     }
     
-    public void ResetAdditionalScene()
-    {
-        StartCoroutine(ResetSceneCoroutine());
-    }
-
-    private IEnumerator ResetSceneCoroutine()
-    {
-        yield return SceneManager.UnloadSceneAsync("TrapsScene");
-        
-        yield return SceneManager.LoadSceneAsync("TrapsScene", LoadSceneMode.Additive);
-    }
 }

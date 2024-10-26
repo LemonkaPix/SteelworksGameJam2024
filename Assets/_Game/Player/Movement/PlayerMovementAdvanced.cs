@@ -70,6 +70,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        // rb.MoveRotation(Quaternion.AngleAxis(180, Vector3.up));
 
         readyToJump = true;
 

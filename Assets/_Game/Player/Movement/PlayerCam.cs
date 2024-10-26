@@ -6,6 +6,7 @@ public class PlayerCam : MonoBehaviour
 {
     public float sensX;
     public float sensY;
+    private bool first = true;
 
     public Transform orientation;
 
@@ -27,6 +28,11 @@ public class PlayerCam : MonoBehaviour
             float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
             yRotation += mouseX;
+            if (first)
+            {
+                yRotation += 180;
+                first = false;
+            }
 
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
