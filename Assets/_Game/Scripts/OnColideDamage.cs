@@ -14,8 +14,14 @@ public class OnColideDamage : MonoBehaviour
         {
             // print("mmm its a player!");
             //Do something to reset
+
+            PlayerManager.instance.gameObject.GetComponent<PlayerMovementAdvanced>().enabled = false;
+            PlayerManager.instance.gameObject.GetComponent<Rigidbody>().freezeRotation = false;
+            PlayerManager.instance.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            PlayerManager.instance.gameObject.GetComponent<Rigidbody>().MoveRotation(Quaternion.AngleAxis(30, Vector3.forward));
+            
             StartCoroutine(resetScene());
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
         }
     }
 
