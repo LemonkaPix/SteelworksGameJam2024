@@ -8,6 +8,7 @@ public class VHSCutscene : MonoBehaviour
     [SerializeField] Animator wall;
     [SerializeField] Animator jigsaw;
     [SerializeField] private Transform sitTrans;
+    [SerializeField] private GameObject firstSaws;
     
     [Button]
     public void Cutscene()
@@ -24,6 +25,7 @@ public class VHSCutscene : MonoBehaviour
         yield return new WaitForSeconds(2);
         HideWall();
         jigsaw.SetInteger("phase", 2);
+        firstSaws.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         CanMoveTrue();
 
