@@ -8,12 +8,14 @@ public class TooltipTrigger : MonoBehaviour
 {
     [SerializeField] GameObject interactTooltip;
     [SerializeField] TMP_Text tooltipText;
+    [SerializeField][TextArea] string tooltipCustomText;
     [SerializeField] Material outlineMat;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer != 7) return;
         MeshRenderer meshRenderer = transform.parent.GetComponent<MeshRenderer>();
         interactTooltip.GetComponent<CanvasGroup>().alpha = 1;
+        tooltipText.text = tooltipCustomText;
         List<Material> mats = meshRenderer.materials.ToList();
         mats.Add(outlineMat);
         meshRenderer.SetMaterials(mats);
