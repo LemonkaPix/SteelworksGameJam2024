@@ -23,6 +23,8 @@ public class Interactable : MonoBehaviour
     [ShowIf("interactionType", InteractionType.Use)]
     [SerializeField] UnityEvent onInteract;
 
+    [SerializeField] GameObject objectToRemove;
+
     public void OnInteract()
     {
         onInteract.Invoke();
@@ -34,7 +36,7 @@ public class Interactable : MonoBehaviour
             inventoryManager.items.Add(itemToGive);
             TooltipTrigger trigger = GetComponentInChildren<TooltipTrigger>();
             trigger.HideTooltip();
-            Destroy(gameObject);
+            Destroy(objectToRemove);
         }
     }
 }
