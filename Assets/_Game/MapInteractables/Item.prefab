@@ -49,7 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionType: 0
-  customTooltip: e to get the fuck out
   itemToGive: {fileID: 11400000, guid: c32e434b8ad738c488d92fdf381b75e4, type: 2}
   onInteract:
     m_PersistentCalls:
@@ -193,4 +192,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTooltip: {fileID: 0}
   tooltipText: {fileID: 0}
+  tooltipCustomText: to get the fuck out
   outlineMat: {fileID: 2100000, guid: 32826321bdc3cfa4ba228f1dfc80ccb3, type: 2}
