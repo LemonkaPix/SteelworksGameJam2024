@@ -1136,6 +1136,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1178710477426094150, guid: 906f9b09c43444a28b397b20b9bffa99,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4493525873098302719, guid: 906f9b09c43444a28b397b20b9bffa99,
         type: 3}
       propertyPath: cameraPosition
@@ -1196,6 +1201,11 @@ PrefabInstance:
       propertyPath: orientation
       value: 
       objectReference: {fileID: 2127136885}
+    - target: {fileID: 4948223189258497377, guid: 906f9b09c43444a28b397b20b9bffa99,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1066871
+      objectReference: {fileID: 0}
     - target: {fileID: 8397895323167751787, guid: 906f9b09c43444a28b397b20b9bffa99,
         type: 3}
       propertyPath: m_Name
@@ -1206,6 +1216,128 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 906f9b09c43444a28b397b20b9bffa99, type: 3}
+--- !u!1001 &1184784661
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 679544697911201048, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4938021109019401252, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127535818951792577, guid: 3ef991414dcea8a4b8ba51a7b45be89d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ef991414dcea8a4b8ba51a7b45be89d, type: 3}
+--- !u!1 &1303785303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303785305}
+  - component: {fileID: 1303785304}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1303785304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303785303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 3398e1baa4460e748b39adc216758656, type: 2}
+--- !u!4 &1303785305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303785303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0403771, y: 4.1649733, z: 11.374202}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304992730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,10 +1438,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19be4ce11d3beb543bc7778ff69432b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionType: 0
+  customTooltip: e to get the fuck out
+  itemToGive: {fileID: 0}
   onInteract:
     m_PersistentCalls:
       m_Calls: []
-  customTooltip: e to get the fuck out
 --- !u!65 &1394082727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1444,6 +1578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTooltip: {fileID: 225571149}
   tooltipText: {fileID: 0}
+  tooltipCustomText: 
   outlineMat: {fileID: 2100000, guid: 32826321bdc3cfa4ba228f1dfc80ccb3, type: 2}
 --- !u!65 &1587174386
 BoxCollider:
@@ -1534,6 +1669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTooltip: {fileID: 225571149}
   tooltipText: {fileID: 0}
+  tooltipCustomText: 
   outlineMat: {fileID: 2100000, guid: 32826321bdc3cfa4ba228f1dfc80ccb3, type: 2}
 --- !u!1 &1839627322
 GameObject:
@@ -1936,10 +2072,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19be4ce11d3beb543bc7778ff69432b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionType: 0
+  customTooltip: e to get the fuck out
+  itemToGive: {fileID: 0}
   onInteract:
     m_PersistentCalls:
       m_Calls: []
-  customTooltip: e to get the fuck out
 --- !u!4 &2127136885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8198021739648502157, guid: f7251630560924c949d3b152f431a188,
@@ -2100,3 +2238,5 @@ SceneRoots:
   - {fileID: 1394082730}
   - {fileID: 584375596}
   - {fileID: 1081004936}
+  - {fileID: 1184784661}
+  - {fileID: 1303785305}
