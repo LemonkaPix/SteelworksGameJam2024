@@ -16,6 +16,6 @@ MonoBehaviour:
   Name: Precooked Popcorn
   Description: 
   Tooltip: 
-  DefaultSprite: {fileID: 21300000, guid: 5ad9a84f892a9344eaf88b109634b3d2, type: 3}
+  DefaultSprite: {fileID: 21300000, guid: 71ddcde6a097a2e44af2ad78d57542f6, type: 3}
   CanStack: 0
   MaxStack: 0
