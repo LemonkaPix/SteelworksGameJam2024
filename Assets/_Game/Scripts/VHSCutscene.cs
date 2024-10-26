@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class VHSCutscene : MonoBehaviour
@@ -10,7 +12,12 @@ public class VHSCutscene : MonoBehaviour
     [SerializeField] private Transform sitTrans;
     [SerializeField] private GameObject firstSaws;
     [SerializeField] private GameObject lasers;
-    
+
+    private void Start()
+    {
+        // Cutscene();
+    }
+
     [Button]
     public void Cutscene()
     {
