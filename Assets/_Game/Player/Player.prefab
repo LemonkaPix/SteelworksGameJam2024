@@ -251,7 +251,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 4
+  m_Height: 3.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8871031197428796382
@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 4061313085175575462}
   - component: {fileID: 7096409918884886788}
   - component: {fileID: 6535359670067042969}
+  - component: {fileID: 6259041011999374890}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -344,8 +345,8 @@ MonoBehaviour:
   crouchYScale: 0.5
   jumpKey: 32
   sprintKey: 304
-  crouchKey: 99
-  playerHeight: 4
+  crouchKey: 310
+  playerHeight: 3.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1025
@@ -370,7 +371,7 @@ MonoBehaviour:
   maxSlideTime: 0.35
   slideForce: 200
   slideYScale: 0.5
-  slideKey: 306
+  slideKey: 99
 --- !u!114 &7096409918884886788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,3 +402,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c2b17e2d9003f4f8ff2b67f09c27b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6259041011999374890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8871031197428796382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7bf6a1f2abdd4f4f8e6b648d0cc0c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  inventorySize: 0

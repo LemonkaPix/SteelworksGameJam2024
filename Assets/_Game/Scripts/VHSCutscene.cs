@@ -10,8 +10,11 @@ public class VHSCutscene : MonoBehaviour
     [SerializeField] Animator wall;
     // [SerializeField] Animator jigsaw;
     [SerializeField] private Transform sitTrans;
+    [SerializeField] private Transform p2Trans;
     [SerializeField] private GameObject firstSaws;
     [SerializeField] private GameObject lasers;
+    [SerializeField] private GameObject traps1;
+    [SerializeField] private GameObject traps2;
 
     private void Start()
     {
@@ -22,9 +25,27 @@ public class VHSCutscene : MonoBehaviour
     public IEnumerator Cutscene()
     {
         yield return new WaitForSeconds(0.1f);
-        PlayerManager.instance.gameObject.transform.position = sitTrans.position;
-        PlayerManager.CanMove = false;
-        StartCoroutine(animation());
+        if (PlayerPrefs.GetInt("phase") == 2)
+        {
+            PlayerManager.instance.gameObject.transform.position = p2Trans.position;
+
+            print("widze p2");
+            p2();
+        }
+        else if(PlayerPrefs.GetInt("phase") == 0)
+        {
+            
+            PlayerManager.instance.gameObject.transform.position = sitTrans.position;
+
+        }
+
+        if (PlayerPrefs.GetInt("phase") == 0)
+        {
+            PlayerManager.CanMove = false;
+            StartCoroutine(animation());
+        }
+        
+
     }
 
     IEnumerator animation()
@@ -51,5 +72,20 @@ public class VHSCutscene : MonoBehaviour
     {
         PlayerManager.CanMove = true;
 
+    }
+
+    [Button]
+    public void ResetPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+    public void p2()
+    {
+        print($"{PlayerPrefs.GetInt("phase")} JEST TU FAZA 2");
+        PlayerPrefs.SetInt("phase", 2);
+
+        traps1.SetActive(false);
+        traps2.SetActive(true);
+        lasers.SetActive(false);
     }
 }
