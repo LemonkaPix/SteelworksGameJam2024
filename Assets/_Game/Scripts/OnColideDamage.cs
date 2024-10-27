@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class OnColideDamage : MonoBehaviour
 {
+    [SerializeField] GameObject damageVolume;
     private void OnTriggerEnter(Collider other)
     {
         // print($"I got {other.gameObject.name}");
@@ -19,7 +20,7 @@ public class OnColideDamage : MonoBehaviour
             PlayerManager.instance.gameObject.GetComponent<Rigidbody>().freezeRotation = false;
             PlayerManager.instance.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             PlayerManager.instance.gameObject.GetComponent<Rigidbody>().MoveRotation(Quaternion.AngleAxis(30, Vector3.forward));
-            
+            damageVolume.SetActive(true);
             StartCoroutine(resetScene());
             // Time.timeScale = 0;
         }
