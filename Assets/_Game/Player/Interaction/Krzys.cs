@@ -35,8 +35,8 @@ public class Krzys : MonoBehaviour
         }
         else
         {
-            Destroy(objeectToDestroy);
-            mng.AddItem(sodaItem);
+            // Destroy(objeectToDestroy);
+            // mng.AddItem(sodaItem);
         }
     }
 
