@@ -77,6 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b5d0728e54646c6a11fa752768d707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageVolume: {fileID: 0}
+  clipOnDeath: {fileID: 8300000, guid: e4a88062e052128429e7cae0daeda9cf, type: 3}
 --- !u!1001 &538988787434303536
 PrefabInstance:
   m_ObjectHideFlags: 0

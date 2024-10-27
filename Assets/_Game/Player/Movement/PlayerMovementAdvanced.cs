@@ -53,6 +53,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+    
+    AudioSource AS;
 
     public MovementState state;
     public enum MovementState
@@ -75,6 +77,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
         readyToJump = true;
 
         startYScale = transform.localScale.y;
+
+        AS = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -108,7 +112,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         if(Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
-
+            
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
@@ -133,6 +137,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
         // Mode - Sliding
         if (sliding)
         {
+            AS.mute = true;
+            
+            
             state = MovementState.sliding;
 
             if (OnSlope() && rb.velocity.y < 0.1f)
@@ -147,11 +154,15 @@ public class PlayerMovementAdvanced : MonoBehaviour
         {
             state = MovementState.crouching;
             desiredMoveSpeed = crouchSpeed;
+            AS.mute = true;
         }
 
         // Mode - Sprinting
         else if(grounded && Input.GetKey(sprintKey))
         {
+            AS.mute = false;
+            AS.mute = Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0 ;
+
             state = MovementState.sprinting;
             desiredMoveSpeed = sprintSpeed;
         }
@@ -161,11 +172,15 @@ public class PlayerMovementAdvanced : MonoBehaviour
         {
             state = MovementState.walking;
             desiredMoveSpeed = walkSpeed;
+            AS.mute = false;
+            AS.mute = Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0 ;
+
         }
 
         // Mode - Air
         else
         {
+            AS.mute = true;
             state = MovementState.air;
         }
 
@@ -234,6 +249,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
         // turn gravity off while on slope
         rb.useGravity = !OnSlope();
+        
     }
 
     private void SpeedControl()

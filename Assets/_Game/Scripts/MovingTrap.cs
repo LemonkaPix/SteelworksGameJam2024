@@ -10,11 +10,16 @@ public class MovingTrap : MonoBehaviour
     [SerializeField] private float movingTime = 10;
     [SerializeField] private float lifeTime = 10;
     private bool canMove = true;
+    [SerializeField] private SoundPlayer sp;
     public void Move()
     {
         moving = true;
         StartCoroutine(killer());
         StartCoroutine(stopper());
+        if (sp)
+        {
+            sp.PlaySource();
+        }
     }
 
     private void Update()

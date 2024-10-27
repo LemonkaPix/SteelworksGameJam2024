@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class OnColideDamage : MonoBehaviour
 {
     [SerializeField] GameObject damageVolume;
+    [SerializeField] private AudioClip clipOnDeath;
     private void OnTriggerEnter(Collider other)
     {
         // print($"I got {other.gameObject.name}");
@@ -16,6 +17,8 @@ public class OnColideDamage : MonoBehaviour
             // print("mmm its a player!");
             //Do something to reset
 
+            AudioSource.PlayClipAtPoint(clipOnDeath,PlayerManager.instance.transform.position);
+            
             PlayerManager.instance.gameObject.GetComponent<PlayerMovementAdvanced>().enabled = false;
             PlayerManager.instance.gameObject.GetComponent<Rigidbody>().freezeRotation = false;
             PlayerManager.instance.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
