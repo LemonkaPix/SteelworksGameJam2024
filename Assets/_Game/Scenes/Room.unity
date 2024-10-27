@@ -14684,7 +14684,7 @@ MonoBehaviour:
   tv: {fileID: 1728651062}
   tvMat: {fileID: 2100000, guid: 1b571e7e0159b83429116de55191563f, type: 2}
   videoPlr: {fileID: 852219573}
-  scene: 0
+  scene: 2
 --- !u!95 &1270141075
 Animator:
   serializedVersion: 5
@@ -18477,8 +18477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19be4ce11d3beb543bc7778ff69432b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBeHighlighted: 0
-  canBeInteracted: 0
+  canBeHighlighted: 1
+  canBeInteracted: 1
   interactionType: 1
   itemToGive: {fileID: 0}
   checkForItem: {fileID: 11400000, guid: c32e434b8ad738c488d92fdf381b75e4, type: 2}
@@ -19930,8 +19930,8 @@ Transform:
   m_GameObject: {fileID: 1728651062}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 2.63, z: 0}
-  m_LocalScale: {x: 1, y: 3.2439, z: 3.111}
+  m_LocalPosition: {x: 0.25, y: 2.63, z: 0}
+  m_LocalScale: {x: 1, y: 3.4119341, z: 3.111}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 346138224}
