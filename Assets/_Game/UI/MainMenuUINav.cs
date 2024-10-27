@@ -48,7 +48,7 @@ public class MainMenuUINav : MonoBehaviour
 
     IEnumerator WaitForCam()
     {
-        yield return new WaitUntil(() => cam.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !cam.GetComponent<Animator>().IsInTransition(0));
+        yield return new WaitForSeconds(0.75f);
         SceneManager.LoadScene(1);
     }
 }

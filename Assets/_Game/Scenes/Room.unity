@@ -13298,7 +13298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTooltip: {fileID: 1192240221}
   tooltipText: {fileID: 341490521}
-  tooltipCustomText: make world better
+  tooltipCustomText: to put in mintos
   outlineMat: {fileID: 2100000, guid: 32826321bdc3cfa4ba228f1dfc80ccb3, type: 2}
 --- !u!65 &1172312389
 BoxCollider:
@@ -20387,7 +20387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTooltip: {fileID: 1192240221}
   tooltipText: {fileID: 341490521}
-  tooltipCustomText: to get the fuck out
+  tooltipCustomText: to pick up
   outlineMat: {fileID: 2100000, guid: 32826321bdc3cfa4ba228f1dfc80ccb3, type: 2}
 --- !u!4 &5909631544934255232
 Transform:
