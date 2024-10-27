@@ -15,28 +15,56 @@ public class Interactable : MonoBehaviour
 {
 
     public bool canBeHighlighted = true;
+    public bool canBeInteracted = true;
     [SerializeField] InteractionType interactionType;
 
     [ShowIf("interactionType", InteractionType.Pickup)]
     [SerializeField] ItemObject itemToGive;
 
     [ShowIf("interactionType", InteractionType.Use)]
+    [SerializeField] ItemObject checkForItem;
+
     [SerializeField] UnityEvent onInteract;
 
-    [SerializeField] GameObject objectToRemove;
+    [SerializeField] GameObject objectToDestroy;
+
+    private void Start()
+    {
+        if(checkForItem)
+        {
+            InventoryManager mng = PlayerManager.instance.GetComponent<InventoryManager>();
+            mng.onInventoryChange += CheckForItem;
+        }
+    }
+
+    public void CheckForItem(ItemObject item, bool state)
+    {
+        if(checkForItem == item)
+        {
+            canBeHighlighted = true;
+            canBeInteracted = true;
+            TooltipTrigger trigger = GetComponentInChildren<TooltipTrigger>();
+
+            trigger.ShowTooltip();
+        }
+    }
 
     public void OnInteract()
     {
-        onInteract.Invoke();
+        onInteract.Invoke(); 
 
         if(itemToGive != null)
         {
             InventoryManager inventoryManager = PlayerManager.instance.GetComponent<InventoryManager>();
 
-            inventoryManager.items.Add(itemToGive);
+            if (itemToGive)
+            {
+                inventoryManager.AddItem(itemToGive);
+                Destroy(objectToDestroy);
+            }
             TooltipTrigger trigger = GetComponentInChildren<TooltipTrigger>();
             trigger.HideTooltip();
-            Destroy(objectToRemove);
+            if(objectToDestroy) Destroy(objectToDestroy);
         }
     }
 }

@@ -8,36 +8,58 @@ public class TooltipTrigger : MonoBehaviour
 {
     [SerializeField] GameObject interactTooltip;
     [SerializeField] TMP_Text tooltipText;
-    [SerializeField][TextArea] string tooltipCustomText;
+    [TextArea] public  string tooltipCustomText;
     [SerializeField] Material outlineMat;
 
     public void ShowTooltip()
     {
-        interactTooltip.GetComponent<CanvasGroup>().alpha = 1;
-        tooltipText.text = tooltipCustomText;
-        if (transform.parent.GetComponent<Interactable>().canBeHighlighted)
+        if (transform.parent.GetComponent<Interactable>() == null) return;
+        Interactable interactable = transform.parent.GetComponent<Interactable>();
+
+        if (interactable.canBeInteracted)
+        {
+            interactTooltip.GetComponent<CanvasGroup>().alpha = 1;
+            tooltipText.text = tooltipCustomText;
+        }
+
+        if (interactable.canBeHighlighted)
         {
 
 
-            MeshRenderer meshRenderer = transform.parent.GetComponent<MeshRenderer>();
+            if(outlineMat)
+            {
+                MeshRenderer meshRenderer = transform.parent.GetComponent<MeshRenderer>();
 
-            List<Material> mats = meshRenderer.materials.ToList();
-            mats.Add(outlineMat);
-            meshRenderer.SetMaterials(mats);
+                List<Material> mats = meshRenderer.materials.ToList();
+                mats.Add(outlineMat);
+                meshRenderer.SetMaterials(mats);
+            }
+
         }
     }
 
     public void HideTooltip()
     {
-        interactTooltip.GetComponent<CanvasGroup>().alpha = 0;
-        if (transform.parent.GetComponent<Interactable>().canBeHighlighted)
+        if (transform.parent.GetComponent<Interactable>() == null) return;
+
+        Interactable interactable = transform.parent.GetComponent<Interactable>();
+        if (interactable.canBeInteracted)
+        {
+            interactTooltip.GetComponent<CanvasGroup>().alpha = 0;
+        }
+
+        if (interactable.canBeHighlighted)
         {
 
 
-            MeshRenderer meshRenderer = transform.parent.GetComponent<MeshRenderer>();
-            List<Material> mats = meshRenderer.materials.ToList();
-            mats.RemoveAt(mats.Count - 1);
-            meshRenderer.SetMaterials(mats);
+            if(outlineMat)
+            {
+                MeshRenderer meshRenderer = transform.parent.GetComponent<MeshRenderer>();
+
+                List<Material> mats = meshRenderer.materials.ToList();
+                mats.RemoveAt(mats.Count - 1);
+                meshRenderer.SetMaterials(mats);
+            }
         }
     }
 

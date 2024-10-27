@@ -14,7 +14,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if(Input.GetKeyDown(interactionButton)) 
         {
-            if(closestObject)
+            if(closestObject && closestObject.GetComponent<Interactable>().canBeInteracted)
                 closestObject.GetComponent<Interactable>().OnInteract();
         }
     }
@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
 
         foreach(Collider obj in nearbyObjects)
         {
-            if (!obj.GetComponent<Interactable>()) return;
+            if (!obj.GetComponent<Interactable>()) continue;
 
             float distance = Vector3.Distance(transform.position, obj.transform.position);
 
