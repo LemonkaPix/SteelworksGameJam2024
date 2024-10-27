@@ -15,6 +15,7 @@ public class VHSCutscene : MonoBehaviour
     [SerializeField] private GameObject lasers;
     [SerializeField] private GameObject traps1;
     [SerializeField] private GameObject traps2;
+    [SerializeField] private GameObject asddadsadadsafsas;
 
     private void Start()
     {
@@ -28,7 +29,7 @@ public class VHSCutscene : MonoBehaviour
         if (PlayerPrefs.GetInt("phase") == 2)
         {
             PlayerManager.instance.gameObject.transform.position = p2Trans.position;
-
+            asddadsadadsafsas.SetActive(false);
             print("widze p2");
             p2();
         }

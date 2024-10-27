@@ -180,7 +180,11 @@ public class PlayerMovementAdvanced : MonoBehaviour
         // Mode - Air
         else
         {
-            AS.mute = true;
+            if (AS)
+            {
+                AS.mute = true;
+            }
+
             state = MovementState.air;
         }
 
