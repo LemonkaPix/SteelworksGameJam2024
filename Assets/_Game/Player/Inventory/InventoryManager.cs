@@ -27,7 +27,7 @@ public class InventoryManager : MonoBehaviour
     public void RemoveItem(ItemObject item)
     {
         items.Remove(item);
-        onInventoryChange.Invoke(item, false);
+        onInventoryChange?.Invoke(item, false);
 
     }
 }

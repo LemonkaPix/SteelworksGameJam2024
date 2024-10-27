@@ -5,7 +5,13 @@ using UnityEngine.UI;
 public class UIHotbar : MonoBehaviour
 {
     [SerializeField] Image[] slots = new Image[4];
+    [SerializeField] GameObject fade;
 
+
+    private void Start()
+    {
+        fade.LeanScale(Vector3.zero, .3f);
+    }
     void UpdateHotbar()
     {
         List<ItemObject> items = PlayerManager.instance.GetComponent<InventoryManager>().items;

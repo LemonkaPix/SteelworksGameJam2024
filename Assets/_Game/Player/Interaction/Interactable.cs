@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -43,10 +44,17 @@ public class Interactable : MonoBehaviour
         {
             canBeHighlighted = true;
             canBeInteracted = true;
-            TooltipTrigger trigger = GetComponentInChildren<TooltipTrigger>();
 
-            trigger.ShowTooltip();
+
+            StartCoroutine(waitForTrigger());
         }
+    }
+
+    IEnumerator waitForTrigger()
+    {
+        yield return new WaitUntil(() => GetComponentInChildren<TooltipTrigger>());
+        GetComponentInChildren<TooltipTrigger>().ShowTooltip();
+
     }
 
     public void OnInteract()
@@ -66,5 +74,10 @@ public class Interactable : MonoBehaviour
             trigger.HideTooltip();
             if(objectToDestroy) Destroy(objectToDestroy);
         }
+    }
+
+    public void DestroyThis(GameObject go)
+    {
+        Destroy(go);
     }
 }
