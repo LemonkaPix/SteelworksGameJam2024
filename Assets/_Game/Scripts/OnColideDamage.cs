@@ -18,7 +18,8 @@ public class OnColideDamage : MonoBehaviour
             //Do something to reset
 
             AudioSource.PlayClipAtPoint(clipOnDeath,PlayerManager.instance.transform.position);
-            
+
+            PlayerManager.instance.deathVolume.SetActive(true);
             PlayerManager.instance.gameObject.GetComponent<PlayerMovementAdvanced>().enabled = false;
             PlayerManager.instance.gameObject.GetComponent<Rigidbody>().freezeRotation = false;
             PlayerManager.instance.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;

@@ -35,7 +35,6 @@ public class DialogProperties
 public class DialogSystem : MonoBehaviour
 {
     [Header("Dialog Settings")]
-    [SerializeField] AudioSource audioSource;
     [SerializeField] TMP_Text dialogName;
     [SerializeField] TMP_Text dialogText;
     [SerializeField] TMP_Text popup;
@@ -75,8 +74,6 @@ public class DialogSystem : MonoBehaviour
         StopCoroutine(DialogTextLerp(""));
         TextShake.Shake(false, "", -1);
 
-        if (audioSource.isPlaying) audioSource.Stop();
-
         DialogProperties currentDialog;
 
         if (DialogQueue.Count == 0)
@@ -94,11 +91,6 @@ public class DialogSystem : MonoBehaviour
         dialogName.color = (Color)currentDialog.NameColor;
         dialogText.text = currentDialog.Text;
 
-        if (currentDialog.voiceClip)
-        {
-            audioSource.clip = currentDialog.voiceClip;
-            audioSource.Play();
-        }
 
         if (dialogText.text.Contains("<shake>".ToLower().Trim()))
         {

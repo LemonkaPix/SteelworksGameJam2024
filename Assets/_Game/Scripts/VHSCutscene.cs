@@ -16,7 +16,10 @@ public class VHSCutscene : MonoBehaviour
     [SerializeField] private GameObject traps1;
     [SerializeField] private GameObject traps2;
     [SerializeField] private GameObject asddadsadadsafsas;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip secondClip;
 
+    [SerializeField] bool debugMode;
     private void Start()
     {
         StartCoroutine(Cutscene());
@@ -51,6 +54,7 @@ public class VHSCutscene : MonoBehaviour
 
     IEnumerator animation()
     {
+        
         yield return new WaitForSeconds(1.9f);
         // jigsaw.SetInteger("phase", 1);
         // yield return new WaitForSeconds(2);
@@ -84,7 +88,10 @@ public class VHSCutscene : MonoBehaviour
     {
         print($"{PlayerPrefs.GetInt("phase")} JEST TU FAZA 2");
         PlayerPrefs.SetInt("phase", 2);
-
+        audioSource.Stop();
+        audioSource.clip = secondClip;
+        audioSource.Play();
+        GetComponent<DialogTrigger>().StartDialog();
         traps1.SetActive(false);
         traps2.SetActive(true);
         lasers.SetActive(false);

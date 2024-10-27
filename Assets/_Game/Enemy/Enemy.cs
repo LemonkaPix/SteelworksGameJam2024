@@ -8,12 +8,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] Slider healthfill;
     public float health;
     public float damagePerHit;
-
+    [SerializeField] GameObject[] explosions;
     [SerializeField] int timeBetweenAttacks;
 
     [SerializeField] LaserAttack laserAttack;
     [SerializeField] SawAttack sawAttack;
     int lastAttack = -1;
+    bool dying = false;
     public void TakeDamage()
     {
         health -= damagePerHit ;
@@ -57,10 +58,22 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         LeanTween.value(healthfill.value, health / 200f, .3f).setOnUpdate((float x) => { healthfill.value = x;});
-        if(health == 0)
+        if(health == 0 && !dying)
         {
-            Debug.Log("gg");
+            dying = true;
+            foreach (GameObject obj in explosions)
+            {
+                obj.SetActive(true);
+                StartCoroutine(WaitForDeath());
+            }
         }
+    }
+
+    IEnumerator WaitForDeath()
+    {
+        yield return new WaitForSeconds(3f);
+        Debug.Log("quit");
+        Application.Quit();
     }
 
 

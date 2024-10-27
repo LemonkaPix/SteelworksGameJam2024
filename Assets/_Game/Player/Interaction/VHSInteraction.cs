@@ -36,6 +36,7 @@ public class VHSInteraction : MonoBehaviour
         camAnim.gameObject.SetActive(true);
         Camera.main.gameObject.SetActive(false);
 
+        GetComponent<DialogTrigger>().StartDialog();
         camAnim.Play("StartCasette");
         tv.GetComponent<MeshRenderer>().material = tvMat;
         videoPlr.Play();

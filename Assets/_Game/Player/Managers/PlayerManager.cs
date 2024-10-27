@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager instance;
     public static bool CanMove = true;
     public bool popcornPutDown;
+    public GameObject deathVolume;
 
     
     
