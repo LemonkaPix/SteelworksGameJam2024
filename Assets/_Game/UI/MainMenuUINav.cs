@@ -51,4 +51,9 @@ public class MainMenuUINav : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         SceneManager.LoadScene(1);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
